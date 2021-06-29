@@ -1,0 +1,82 @@
+﻿@model ExamViewModel
+
+@{
+	ViewData["Title"] = "Sınav Oluştur";
+
+}
+@if (!string.IsNullOrEmpty(Model.Content))
+{
+
+	<div class="row">
+	 <div class="col-12 mt-3">
+	  <input type="hidden" asp-for="Id" />
+	  <h5 asp-for="Title">@Model.Title</h5>
+	  <textarea class="form-control" asp-for="Content" disabled="disabled"></textarea>
+	 </div>
+	</div>
+	@foreach (var question in Model.Questions.OrderBy(x => x.Order))
+	{
+		<div class="row">
+		 <div class="col-12 mt-3">
+		  <label class="form-control">@question.Order ) @question.Title</label>
+		 </div>
+			@foreach (var answer in question.Answers.OrderBy(x => x.Stylish))
+			{
+
+			 <div class="col-6 mt-3">
+			  <input type="radio" name="@question.Id" id="ansRadio" value="@answer.Stylish" />@(answer.Stylish.ToString()) ) @answer.Content
+			 </div>
+			}
+		</div>
+	}
+	<button class="btn btn-success" type="button" id="btnComplete">SINAVI TAMAMLA</button>
+}
+@section Scripts
+{
+    <script>
+        $('#btnComplete').on('click',
+            function() {
+
+                var examId = $('#Id').val();
+                var answers = [];
+
+                $("input[id='ansRadio']:checked").each(function(index, value) {
+                    var answer = $(this);
+
+                    answers.push(
+                        {
+                            questionId: parseInt(answer.attr('name')),
+                            answer: answer.val()
+                        }
+                    );
+                });
+
+                var model = {
+                    Id: parseInt(examId),
+                    Answers: answers
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("Complete")",
+                    data: JSON.stringify(model),
+                    success: function(data, status, xhr) {
+                        $.each(data,
+                            function(index, value) {
+                                var el = $(`input[name='${value.questionId}']:checked`);
+
+                                if (el) {
+                                    if (!value.correct) {
+                                        el.parent().css('background', 'red');
+                                    }
+
+                                    $(`input[name='${value.questionId}'][value='${value.correctStylish}']`).parent().css('background', 'green');
+                                }
+                            });
+                    },
+                    contentType: "application/json; charset=utf-8"
+                });
+
+            });
+    </script>
+}

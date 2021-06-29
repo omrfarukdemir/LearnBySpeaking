@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2FB2FCF9-3637-4328-9C64-199615785A53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{59E82F60-7758-47A8-BFA9-42154D72398D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{85191DC6-4261-4A82-B4FE-28CE82F662CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBySpeaking.Web", "src\Presentation\LearnBySpeaking.Web\LearnBySpeaking.Web.csproj", "{3D27F10A-9428-43F1-AB46-241F1DBC2BE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBySpeaking.Core", "src\Libraries\LearnBySpeaking.Core\LearnBySpeaking.Core.csproj", "{922A748C-87F5-46D7-A352-8267DDB48D86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBySpeaking.Data", "src\Libraries\LearnBySpeaking.Data\LearnBySpeaking.Data.csproj", "{75FC5282-4578-4B0B-A5CA-C6E92E080BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBySpeaking.Services", "src\Libraries\LearnBySpeaking.Services\LearnBySpeaking.Services.csproj", "{B8988230-DAE4-453C-AF59-30C162A54195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D27F10A-9428-43F1-AB46-241F1DBC2BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D27F10A-9428-43F1-AB46-241F1DBC2BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D27F10A-9428-43F1-AB46-241F1DBC2BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D27F10A-9428-43F1-AB46-241F1DBC2BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922A748C-87F5-46D7-A352-8267DDB48D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922A748C-87F5-46D7-A352-8267DDB48D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922A748C-87F5-46D7-A352-8267DDB48D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922A748C-87F5-46D7-A352-8267DDB48D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FC5282-4578-4B0B-A5CA-C6E92E080BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FC5282-4578-4B0B-A5CA-C6E92E080BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FC5282-4578-4B0B-A5CA-C6E92E080BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FC5282-4578-4B0B-A5CA-C6E92E080BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8988230-DAE4-453C-AF59-30C162A54195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8988230-DAE4-453C-AF59-30C162A54195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8988230-DAE4-453C-AF59-30C162A54195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8988230-DAE4-453C-AF59-30C162A54195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59E82F60-7758-47A8-BFA9-42154D72398D} = {2FB2FCF9-3637-4328-9C64-199615785A53}
+		{85191DC6-4261-4A82-B4FE-28CE82F662CC} = {2FB2FCF9-3637-4328-9C64-199615785A53}
+		{3D27F10A-9428-43F1-AB46-241F1DBC2BE0} = {85191DC6-4261-4A82-B4FE-28CE82F662CC}
+		{922A748C-87F5-46D7-A352-8267DDB48D86} = {59E82F60-7758-47A8-BFA9-42154D72398D}
+		{75FC5282-4578-4B0B-A5CA-C6E92E080BEC} = {59E82F60-7758-47A8-BFA9-42154D72398D}
+		{B8988230-DAE4-453C-AF59-30C162A54195} = {59E82F60-7758-47A8-BFA9-42154D72398D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52B8BC81-839B-4E7C-92BB-C8774E9C9C8E}
+	EndGlobalSection
+EndGlobal

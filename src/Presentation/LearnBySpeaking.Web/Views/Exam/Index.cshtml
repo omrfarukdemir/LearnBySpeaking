@@ -1,0 +1,36 @@
+﻿@model List<ListExamViewModel>
+@{
+	ViewData["Title"] = "Sınavlar";
+}
+<a asp-action="Create" class="btn btn-primary">Sınav Oluştur</a>
+@if (!Model.Any())
+{
+	<h4>Sınav Bulunamadı</h4>
+}
+else
+{
+	<table class="table table-striped">
+	 <thead>
+	  <tr>
+	   <th>#</th>
+	   <th>Başlık</th>
+	   <th>Tarih</th>
+	   <th></th>
+	  </tr>
+	 </thead>
+	 <tbody>
+			@foreach (var exam in Model.OrderBy(x => x.Id))
+			{
+		  <tr>
+		   <td>@exam.Id</td>
+		   <td>@exam.Title</td>
+		   <td>@exam.CreateDate.ToString("d")</td>
+              <td>
+                  <a asp-action="Delete" asp-route-id="@exam.Id">Sil</a>
+                  <a asp-action="Quiz" asp-route-id="@exam.Id">Göster</a>
+              </td>
+		  </tr>
+			}
+	 </tbody>
+	</table>
+}
